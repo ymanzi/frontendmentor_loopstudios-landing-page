@@ -23,7 +23,12 @@ export const Footer = () => {
       <div className='footer__right'>
         <div className='footer__socials'>
           {socials.map((social, index) => (
-            <img key={index} src={social} alt={social} className='social' />
+            <img
+              key={index}
+              src={social}
+              alt={social}
+              className='social pointer'
+            />
           ))}
         </div>
         <p className='footer__disclaimer'>

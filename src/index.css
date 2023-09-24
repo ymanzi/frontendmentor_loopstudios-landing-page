@@ -471,11 +471,10 @@ button:hover {
 .social {
   width: 1.5rem;
   height: 1.5rem;
-  cursor: pointer;
   position: relative;
 }
 
-.social::after {
+img::after {
   content: '';
   position: absolute;
   bottom: -0.3rem;
@@ -483,10 +482,10 @@ button:hover {
   scale: 1 1;
   height: 2px;
   width: 100%;
-  background: white;
+  background: red;
 }
 
-.social:hover::after {
+img:hover::after {
   scale: 0.5 1;
 }
 
