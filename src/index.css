@@ -151,7 +151,9 @@ header {
 }
 
 .header__nav li {
+  font-family: var(--ff-alata);
   color: white;
+  font-weight: var(--fw-bold);
   z-index: 1;
 }
 
@@ -244,6 +246,7 @@ header {
   position: relative;
   /* width: 20.4375rem;
   height: 7.5rem; */
+  overflow: hidden;
   z-index: 0;
 }
 
@@ -469,7 +472,27 @@ button:hover {
   width: 1.5rem;
   height: 1.5rem;
   cursor: pointer;
+  position: relative;
 }
+
+.social::after {
+  content: '';
+  position: absolute;
+  bottom: -0.3rem;
+  left: 0;
+  scale: 1 1;
+  height: 2px;
+  width: 100%;
+  background: white;
+}
+
+.social:hover::after {
+  scale: 0.5 1;
+}
+
+/* .social:hover {
+  border: 1px solid red;
+} */
 
 .footer__disclaimer {
   color: #fff;
@@ -508,6 +531,25 @@ button:hover {
 li:hover,
 .pointer {
   cursor: pointer;
+}
+
+li {
+  position: relative;
+}
+
+li::after {
+  content: '';
+  position: absolute;
+  bottom: -0.3rem;
+  left: 0;
+  scale: 0 1;
+  height: 2px;
+  width: 100%;
+  background: white;
+}
+
+li:hover::after {
+  scale: 0.5 1;
 }
 
 .close-btn {
