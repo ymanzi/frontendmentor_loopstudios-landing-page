@@ -1,13 +1,516 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=DM+Sans:opsz,wght@9..40,400;9..40,700&family=Josefin+Sans:wght@300&display=swap');
+
+/*--------------------------------------*/
+/*                 RESET                */
+/*--------------------------------------*/
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+}
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/*--------------------------------------*/
+/*               VARIABLES              */
+/*--------------------------------------*/
+
+:root {
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-black: hsl(0, 0%, 0%);
+  --clr-grey: hsl(0, 0%, 55%);
+  --clr-darkGrey: hsl(0, 0%, 41%);
+
+  --fontSize: 15px;
+  --ff-alata: 'Alata', sans-serif;
+  --ff-josefin: 'Josefin Sans', sans-serif;
+  --fw-regular: 300;
+  --fw-bold: 400;
+}
+
+/*-----------------------------------*/
+/*                CSS                */
+/*-----------------------------------*/
+
+body {
+  font-size: var(--fontSize);
+  font-family: var(--ff-josefin);
+  font-weight: var(--fw-regular);
+  height: 100vh;
+  width: 23.4375rem;
+  margin: 0 auto;
+}
+
+.header__img {
+  background: url('assets/mobile/image-hero.jpg');
+  background-size: 100% 100%;
+  position: relative;
+  height: 40.625rem;
+}
+
+.header__img:after {
+  content: '';
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  padding: 2.5rem 1.5rem 14.19rem;
+}
+
+.header__menu {
+  display: flex;
+  justify-content: space-between;
+  /* margin-bottom: 10.19rem; */
+}
+
+.z-index {
+  z-index: 1;
+}
+
+.logo {
+  width: 9rem;
+  height: 1.5rem;
+}
+
+.hamburger-menu {
+  width: 1.5rem;
+  height: 1rem;
+  position: relative;
+}
+
+.header__nav {
+  display: none;
+}
+
+.header__nav li {
+  color: white;
+  z-index: 1;
+}
+
+.header__title {
+  border: 1px solid #fff;
+  padding: 1.5rem;
+  color: white;
+  font-size: 2.5rem;
+  line-height: 2.375rem;
+  text-transform: uppercase;
+  position: absolute;
+  width: calc(100% - 3rem);
+  top: 14.19rem;
+  z-index: 1;
+}
+
+.company_presentation {
+  padding: 6rem 1.5rem;
+}
+
+.company_presentation__image {
+  width: 24.875rem;
+}
+
+.company_presentation__card {
+  padding: 3rem 1.5rem 6rem;
+  text-align: center;
+  display: grid;
+  gap: 1rem;
+}
+
+.card__title {
+  font-size: 2rem;
+  line-height: 2rem;
+  text-transform: uppercase;
+  font-weight: var(--fw-regular);
+}
+
+.card__content {
+  color: #000;
+  opacity: 0.4994;
+  font-family: var(--ff-alata);
+  font-size: 0.9375rem;
+  font-weight: var(--fw-bold);
+  line-height: 1.5625rem;
+}
+
+.creations {
+  padding: 0 1.5rem 6rem;
+}
+
+.creations__header {
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.creations__title {
+  font-size: 2rem;
+  font-weight: var(--fw-regular);
+  line-height: 2rem;
+  text-transform: uppercase;
+}
+
+.creations__header__button {
+  display: none;
+}
+
+.creations__gallery {
+  --_image: url('./assets/mobile/image-deep-earth.jpg');
+  --_linear_gradient: linear-gradient(
+    270deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  --_background: var(--_linear_gradient), var(--_image);
+  --_shadow: inset calc(7.5rem / 2) calc(20.4375rem / 2)
+    rgba(255, 255, 255, 0.75);
+
+  display: grid;
+  gap: 1.5rem;
+  /* gap: 1.87rem; */
+  grid-template-columns: 20.4375rem;
+  grid-template-rows: repeat(8, 7.5rem);
+  margin-bottom: 2.13rem;
+}
+
+.creation {
+  position: relative;
+  /* width: 20.4375rem;
+  height: 7.5rem; */
+  z-index: 0;
+}
+
+/* .creation__image {
+  position: absolute;
+  z-index: 0;
+} */
+
+/* .creation:hover .creation__image {
+  opacity: 0.7;
+} */
+
+.creation:nth-of-type(1) .creation__image {
+  background: var(--_background);
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.creation:nth-of-type(1):hover .creation__image {
+  background-image: var(--_image);
+  box-shadow: var(--_shadow);
+}
+
+.creation:nth-of-type(2) .creation__image {
+  --_image: url('./assets/mobile/image-night-arcade.jpg');
+  --_background: var(--_linear_gradient), var(--_image);
+
+  background-image: var(--_background);
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.creation:nth-of-type(2):hover .creation__image {
+  background-image: var(--_image);
+  box-shadow: var(--_shadow);
+}
+
+.creation:nth-of-type(3) .creation__image {
+  --_image: url('./assets/mobile/image-soccer-team.jpg');
+  --_background: var(--_linear_gradient), var(--_image);
+
+  background-image: var(--_background);
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.creation:nth-of-type(3):hover .creation__image {
+  background-image: var(--_image);
+  box-shadow: var(--_shadow);
+}
+
+.creation:nth-of-type(4) .creation__image {
+  --_image: url('./assets/mobile/image-grid.jpg');
+  --_background: var(--_linear_gradient), var(--_image);
+
+  background-image: var(--_background);
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.creation:nth-of-type(4):hover .creation__image {
+  background-image: var(--_image);
+  box-shadow: var(--_shadow);
+}
+
+.creation:nth-of-type(5) .creation__image {
+  --_image: url('./assets/mobile/image-from-above.jpg');
+  --_background: var(--_linear_gradient), var(--_image);
+
+  background-image: var(--_background);
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.creation:nth-of-type(5):hover .creation__image {
+  background-image: var(--_image);
+  box-shadow: var(--_shadow);
+}
+
+.creation:nth-of-type(6) .creation__image {
+  --_image: url('./assets/mobile/image-pocket-borealis.jpg');
+  --_background: var(--_linear_gradient), var(--_image);
+
+  background-image: var(--_background);
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.creation:nth-of-type(6):hover .creation__image {
+  background-image: var(--_image);
+  box-shadow: var(--_shadow);
+}
+
+.creation:nth-of-type(7) .creation__image {
+  --_image: url('./assets/mobile/image-curiosity.jpg');
+  --_background: var(--_linear_gradient), var(--_image);
+
+  background-image: var(--_background);
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.creation:nth-of-type(7):hover .creation__image {
+  background-image: var(--_image);
+  box-shadow: var(--_shadow);
+}
+
+.creation:nth-of-type(8) .creation__image {
+  --_image: url('./assets/mobile/image-fisheye.jpg');
+  --_background: var(--_linear_gradient), var(--_image);
+
+  background-image: var(--_background);
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.creation:nth-of-type(8):hover .creation__image {
+  background-image: var(--_image);
+  box-shadow: var(--_shadow);
+}
+
+/* .creation:after {
+  position: absolute;
+  content: '';
+  width: 15rem;
+  height: 7.5rem;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(
+    270deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  z-index: 1;
+} */
+
+.creation__title {
+  bottom: 1.25rem;
+  left: 1.25rem;
+  width: 8rem;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: var(--fw-regular);
+  line-height: 1.5rem;
+  text-transform: uppercase;
+  position: absolute;
+  z-index: 1;
+}
+
+.creation:hover .creation__title {
+  color: black;
+}
+
+.small_title {
+  width: 1.5rem;
+}
+
+button {
+  border-radius: 0;
+  background-color: #fff;
+  border: 1px solid #000;
+  padding: 0.81rem 2.69rem 0.81rem 2.38rem;
+
+  color: #000;
+  font-family: var(--ff-alata);
+  font-size: 0.875rem;
+  font-weight: var(--fw-bold);
+  line-height: 0.875rem;
+  letter-spacing: 0.3125rem;
+  text-transform: uppercase;
+}
+
+button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.creations__button {
+  display: block;
+  margin: 0 auto;
+}
+
+.footer {
+  background-color: #000;
+  padding: 3.5rem 3.19rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer__nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  margin: 2rem 0rem 3rem;
+  gap: 1rem;
+}
+
+.footer__nav li {
+  font-family: var(--ff-alata);
+  font-size: 0.9375rem;
+  font-weight: var(--fw-bold);
+  line-height: 1.5625rem;
+}
+
+.footer__socials {
+  margin: 0rem 4rem 2.56rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.social {
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+}
+
+.footer__disclaimer {
+  color: #fff;
+  font-family: var(--ff-alata);
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: var(--fw-bold);
+  line-height: 1.5625rem;
+  opacity: 0.5;
+}
+
+.black-bg {
+  background-color: black;
+}
+
+.menu__menu {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 9.94rem;
+}
+
+.menu__nav {
+  display: grid;
+  gap: 1.5rem;
+  color: #fff;
+  list-style: none;
+}
+
+.menu__nav li {
+  font-size: 1.5rem;
+  font-weight: var(--fw-regular);
+  line-height: 1.5625rem;
+  text-transform: uppercase;
+}
+
+li:hover,
+.pointer {
+  cursor: pointer;
+}
+
+.close-btn {
+  height: 1.25rem;
+  width: 1.25rem;
 }

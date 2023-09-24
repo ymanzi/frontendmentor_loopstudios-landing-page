@@ -1,0 +1,99 @@
+body {
+  width: 23.4375rem;
+  margin: 0 auto;
+}
+
+header {
+  padding: 2.5rem 1.5rem;
+  background-color: red;
+}
+
+.logo {
+  width: 9rem;
+  height: 1.5rem;
+}
+
+header nav {
+  display: none;
+}
+
+.hamburger-menu {
+  display: block;
+  cursor: pointer;
+}
+
+.header__title {
+  font-size: 2.5rem;
+  line-height: 2.375rem;
+  width: 100%;
+  padding: 1.5rem;
+  margin-bottom: 14.19rem;
+  object-fit: cover;
+}
+
+main {
+  padding: 0;
+}
+
+main article {
+  position: static;
+}
+
+main article img {
+  padding: 0 1.5rem;
+}
+
+.card {
+  position: static;
+  padding: 3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card__title {
+  font-size: 2rem;
+  line-height: 2rem;
+  width: 17.4375rem;
+  text-align: center;
+}
+
+.card__content {
+  width: 17.4375rem;
+  text-align: center;
+}
+
+.gallery {
+  margin-top: 6rem;
+  margin-right: 0;
+}
+
+.gallery__top {
+  margin-bottom: 3rem;
+  /* padding: 0 3rem; */
+}
+
+.gallery__button {
+  display: none;
+}
+
+.gallery__title {
+  font-size: 2rem;
+  line-height: 2rem;
+  /* text-align: center; */
+  margin: 0 3rem;
+  margin-bottom: 3rem;
+}
+
+.gallery__creations {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0 1.5rem;
+}
+
+.creation__img {
+  position: static;
+  width: 20.4375rem;
+  height: 7.5rem;
+}

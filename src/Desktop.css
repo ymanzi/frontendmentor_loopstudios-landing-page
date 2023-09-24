@@ -1,0 +1,158 @@
+/*-----------------------------------*/
+/*                CSS                */
+/*-----------------------------------*/
+
+@media (min-width: 900px) {
+  body {
+    width: 100%;
+  }
+
+  header {
+    padding: 4rem 10.25rem;
+  }
+
+  .header__img {
+    background: url('assets/desktop/image-hero.jpg');
+  }
+
+  .hamburger-menu {
+    display: none;
+  }
+
+  .header__nav {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .header__title {
+    width: 40.625rem;
+    padding: 2.5rem;
+    font-size: 4.5rem;
+    line-height: 4.375rem;
+    top: 14.12rem;
+  }
+
+  .company_presentation {
+    padding: 0;
+    margin: 10rem 10.25rem 11.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .company_presentation__image {
+    width: 45.6875rem;
+    height: 31.25rem;
+  }
+
+  .company_presentation__card {
+    padding: 6rem 0 0 6rem;
+    position: absolute;
+    z-index: 1;
+    /* top: 21.44rem; */
+    gap: 1.56rem;
+    bottom: 0rem;
+    left: 35.56rem;
+    background-color: white;
+    text-align: left;
+  }
+
+  .card__title {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+
+  .creations {
+    margin: 0rem 10.12rem 11.5rem 10.25rem;
+    padding: 0;
+  }
+
+  .creations__header {
+    justify-content: space-between;
+    margin-bottom: 5rem;
+  }
+
+  .creations__title {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+
+  .creations__header__button {
+    display: block;
+  }
+
+  .creations__gallery {
+    --_image: url('./assets/desktop/image-deep-earth.jpg');
+    --_linear_gradient: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.6) 100%
+    );
+    --_background: var(--_linear_gradient), var(--_image);
+    --_shadow: inset calc(28.125rem / 2) calc(16rem / 2)
+      rgba(255, 255, 255, 0.75);
+
+    gap: 1.87rem;
+    grid-template-columns: repeat(4, 16rem);
+    grid-template-rows: repeat(2, 28.125rem);
+  }
+
+  /* .creation {
+    width: none;
+    height: none;
+  } */
+
+  .creation:nth-of-type(1) .creation__image {
+    background: var(--_background);
+    background-size: cover;
+    /* height: 100%;
+    width: 100%; */
+  }
+
+  .creation:nth-of-type(1):hover .creation__image {
+    background-image: var(--_image);
+    box-shadow: var(--_shadow);
+  }
+
+  /* .creation:after {
+    width: 16rem;
+    height: 28.125rem;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.6) 100%
+    );
+  } */
+
+  /* .creation:hover .creation:after {
+    background: rgba(255, 255, 255, 0.75);
+  } */
+
+  .creations__button {
+    display: none;
+  }
+
+  .footer {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2.75rem 10.31rem 2.69rem;
+  }
+
+  .footer__left,
+  .footer__right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .footer__nav {
+    flex-direction: row;
+    gap: 2rem;
+    margin: 0;
+  }
+
+  .footer__socials {
+    margin: 0;
+    justify-content: end;
+  }
+}
